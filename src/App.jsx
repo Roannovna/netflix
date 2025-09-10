@@ -35,9 +35,11 @@ function App() {
 
           <button
             onClick={toggleTheme}
-            className='text-sm px-3 py-1rounded border border-white/20
-            dark:border-white/10 hover:bg-white hover:text-black
-            dark:hover:bg-ehite/10 transition w-20'
+            className='px-2 py-1 rounded border 
+            border-black/15 dark:border-white/30 
+            hover:bg-black/80 dark:hover:bg-white/80
+            hover:text-white/80 dark:hover:text-black/80
+            transition w-20'
           >
             {theme === 'dark' ? 'Light☀️' : 'Dark🌙'}
           </button>
