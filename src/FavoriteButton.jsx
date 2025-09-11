@@ -4,7 +4,7 @@ export function FavoriteButton() {
 const [isFavorite, setIsFavorite] = useState(false)
 
   return (
-    <button onClick={() => setIsFavorite(!isFavorite)}>
+    <button className="btn" onClick={() => setIsFavorite(!isFavorite)}>
       {isFavorite ? '❤️‍🔥' : '🩶'}
     </button>
   )
