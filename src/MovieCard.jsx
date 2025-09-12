@@ -1,10 +1,13 @@
-import { FavoriteButton } from "./FavoriteButton";
-import { useState } from "react";
+import FavoriteButton from "./FavoriteButton";
+import { memo, useCallback, useState } from "react";
 import { Modal } from "./components/UI/Modal";
 
-
-export function MovieCard({image, rating, trailerYoutubeID}) {
+function MovieCard({image, rating, trailerYoutubeID}) {
   const [isOpenTrailer, setIsOpenTrailer] = useState(false);
+  
+  const openTrailer = useCallback(() => {
+    setIsOpenTrailer(true)
+  }, [])
 
   return (
     <div className="relative w-[200px] rounded-2xl overflow-hidden 
@@ -40,9 +43,7 @@ export function MovieCard({image, rating, trailerYoutubeID}) {
         <FavoriteButton />
         <button
           className="btn"
-          onClick={() => {
-            setIsOpenTrailer(true)
-          }}
+          onClick={openTrailer}
         >
           🎞️
         </button>
@@ -56,3 +57,5 @@ export function MovieCard({image, rating, trailerYoutubeID}) {
     </div>
   )
 }
+
+export default memo(MovieCard)
