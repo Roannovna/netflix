@@ -6,6 +6,7 @@ export function Modal({ children, onClose}) {
     const handleEsc = e => {
       if(e.key === 'Escape') {
         onClose()
+        console.log('esc')
       }
     }
 

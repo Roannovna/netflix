@@ -1,6 +1,7 @@
 import FavoriteButton from "./FavoriteButton";
 import { memo, useCallback, useState } from "react";
 import { Modal } from "./components/UI/Modal";
+import { Link } from "react-router-dom";
 
 function MovieCard({image, rating, trailerYoutubeID}) {
   const [isOpenTrailer, setIsOpenTrailer] = useState(false);
@@ -41,12 +42,20 @@ function MovieCard({image, rating, trailerYoutubeID}) {
       
       <div className="absolute top-2 right-2 z-10 flex gap-2">
         <FavoriteButton />
+
         <button
           className="btn"
           onClick={openTrailer}
         >
           🎞️
         </button>
+
+        <Link 
+        to={`/movie/${trailerYoutubeID}`}
+        className="btn"
+        >
+          🔗
+        </Link>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full

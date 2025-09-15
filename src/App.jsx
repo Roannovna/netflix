@@ -16,10 +16,8 @@ function App() {
     )
   }, [debouncedSearch])
 
-
   return (
-    <div className='min-h-screen w-full bg-white dark:bg-black 
-    text-black dark:text-white px-6 py-5'>
+    <div>
       <header className='mb-10 flex items-center justify-between'>
         <img
           src='/netflix.png'
@@ -57,7 +55,7 @@ function App() {
             <MovieCard {...movie} key={movie.name} />
           )) 
         ) : (
-          <p>No movies found🥲</p>
+          <p>Фильм не найден🥲</p>
         )}
       </main>
     </div>
