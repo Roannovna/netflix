@@ -1,6 +1,6 @@
 import FavoriteButton from "./FavoriteButton";
 import { memo, useCallback, useState } from "react";
-import { Modal } from "./components/UI/Modal";
+import { Modal } from "../../components/UI/Modal";
 import { Link } from "react-router-dom";
 
 function MovieCard({image, rating, trailerYoutubeID}) {
