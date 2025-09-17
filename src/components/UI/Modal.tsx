@@ -1,9 +1,14 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
-export function Modal({ children, onClose}) {
+interface Props {
+  children: React.ReactNode;
+  onClose: () => void;
+}
+
+export function Modal({ children, onClose}: Props) {
   useEffect(() => {
-    const handleEsc = e => {
+    const handleEsc = (e: KeyboardEvent) => {
       if(e.key === 'Escape') {
         onClose()
         console.log('esc')

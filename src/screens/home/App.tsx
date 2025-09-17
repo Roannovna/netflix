@@ -52,7 +52,7 @@ function App() {
       <main className='flex gap-6'>
         {movies.length ? (
           movies.map(movie => (
-            <MovieCard {...movie} key={movie.name} />
+            <MovieCard movie={movie} key={movie.name} />
           )) 
         ) : (
           <p>Фильм не найден🥲</p>

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { ThemeContext } from "./theme.context";
+import { useEffect, useState, type PropsWithChildren } from "react";
+import { ThemeContext, type ThemeType } from "./theme.context";
 
-export function ThemeProvider({children}) {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem('theme') || 'dark'
+export function ThemeProvider({ children }: PropsWithChildren) {
+  const [theme, setTheme] = useState<ThemeType>(
+    () => localStorage.getItem('theme') as ThemeType || 'dark'
   );
 
   useEffect(() => {
